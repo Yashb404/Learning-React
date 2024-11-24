@@ -1,15 +1,24 @@
-.Welcome-message{
+.list-category{
     font-size: 2.5em;
-    background-color: green;
-    color: black;
-    margin: 0;
-    border-radius: 5px;
+    font-weight: bold;
+    color:hsl(from color 0 0% 20%);
+    margin: 10px;
+    text-align: center;
+    border-radius: 25%;
+    border: 10px solid;
+    background-color: royalblue;
 }
 
-.Login-message{
-    font-size: 2.5em;
-    background-color: red;
-    color: black;
-    margin: 0;
-    border-radius: 5px;
+.list-items li{
+    font-size: 1.5em;
+    text-decoration: solid;
+    border: 1px solid ;
+    word-spacing: normal;
+    border-spacing: 1px;
+    
+}
+
+.list-items li :hover{
+    color: chartreuse;
+    cursor: pointer;
 }

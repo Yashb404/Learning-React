@@ -1,17 +1,41 @@
-function List(){
+import PropTypes from 'prop-types';
 
 
-    //fruits.sort((a, b) => a.name.localeCompare(b.name))  //Alphabetical
+function List(props){
+    const category = props.category;
+    const itemList = props.items; 
 
-    //fruits.sort((a,b)=> a.calories-b.calories);
+    const ListItems = itemList.map(itemList => <li key={itemList.name}>
+                                            {itemList.name}: &nbsp;
+                                            <b>{itemList.calories}</b></li>);
 
-    const lowCalfruits = fruits.filter(fruit => fruit.calories < 100);
-    //const highCalfruits = fruits.filter(fruit => fruit.calories > 100);
-
-    const ListItems = lowCalfruits.map(lowCalfruits => <li key={lowCalfruits.name}>
-                                            {lowCalfruits.name}: &nbsp;
-                                            <b>{lowCalfruits.calories}</b></li>);
-
-    return(<ol>{ListItems}</ol>);
+    return(<>
+    
+    <h3 className="list-category">{category}</h3>
+    <ol className="list-items">{ListItems}</ol>
+    
+    </>);
 }
-export default List
+
+List.PropTypes = {
+    category: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.shape({id: PropTypes.number,
+        name:PropTypes.string,
+        calories:PropTypes.number,
+}))
+}
+
+List.defaultProps = {
+category:"Category",
+items:[],
+
+}
+export default List 
+
+
+
+
+
+
+
+
