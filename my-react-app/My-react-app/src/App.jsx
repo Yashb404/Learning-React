@@ -1,4 +1,4 @@
-import List from './List.jsx/'
+import List from '../../../NotusingStuff/List.jsx'
 
 function App(){
 
